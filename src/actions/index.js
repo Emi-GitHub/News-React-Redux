@@ -24,17 +24,12 @@ export const fetchTopHeadlines = () => async dispatch => {
         type: 'FETCH_HEADLINES',
         payload: response.data.articles,
     })
-    /*if(response.data.article.length === 0){
-        dispatch({
-            type: 'SHOW_ERROR'
-        })
-    }*/
 }
-export const fetchNews = (term2) => async dispatch => {
-    console.log(term2)
+export const fetchNews = (term) => async dispatch => {
+    console.log(term)
     const BASE_URL = 'https://newsapi.org/v2/everything?';
     const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
-    const q = term2; 
+    const q = term; 
     const url = BASE_URL + 'q=' + q + '&' + API_KEY;
     console.log(url)
     const response = await axios.get(url);
@@ -64,11 +59,6 @@ export const fetchNews = (term2) => async dispatch => {
         type: 'FETCH_HEADLINES',
         payload: response.data.articles,
     })
-    /*if(response.data.articles.length === 0){
-        dispatch({
-            type: 'SHOW_ERROR'
-        })
-    }*/
 }
 export const fetchNewsSort = (term, radio) => async dispatch => {
         var sortBy;
@@ -103,11 +93,6 @@ export const fetchNewsSort = (term, radio) => async dispatch => {
             type: 'FETCH_HEADLINES',
             payload: response.data.articles,
         })
-        /*if(response.data.articles.length === 0){
-            dispatch({
-                type: 'SHOW_ERROR'
-            })
-        }*/
 }
 export const api = response => {
     return {

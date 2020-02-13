@@ -9,9 +9,9 @@ import { connect } from 'react-redux';
 
 class Everything extends Component { 
     render() {
-        if(this.props.showError){
+        const notFound = () =>{
             return (
-                <div>
+                <div className="not-found"> 
                     <p>Your search - <b>{this.props.rememberTerm}</b> - did not match any documents.</p>
                     <p>Suggestions:</p> 
                     <li>Make sure that all words are spelled correctly.</li>
@@ -37,8 +37,7 @@ class Everything extends Component {
                                     </Link>
                                     <div className="header-top">Search for...</div>
                                     <NewsList />
-                                    <ButtonBar /> 
-                                    {this.props.showError ? <div>Not found</div> : null}
+                                    {this.props.headlines.length === 0 ? notFound() : <ButtonBar /> }
                                 </div>
                             </div>
                         </div>
@@ -56,7 +55,6 @@ const mapStateToProps = state => {
         radio1: state.radio1,
         radio2: state.radio2,
         radio3: state.radio3,
-        showError: state.showError,
         background: state.background,
         loaded: state.loaded,
         loading: state.loading,

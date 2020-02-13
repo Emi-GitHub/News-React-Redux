@@ -104,13 +104,6 @@ const radio3 = (state = initialRadio3, action) => {
         default: return state;
     }
 }
-const initialShowError = false;
-const ShowError = (state = initialShowError, action) => {
-    switch(action.type) {
-        case 'SHOW_ERROR': return true;
-        default: return state;
-    }
-}
 const initialTerm2 = '';
 const term2 = (state = initialTerm2, action) => {
     switch(action.type) {
@@ -134,6 +127,5 @@ export default combineReducers ({
     radio1,
     radio2,
     radio3,
-    ShowError,
     term2,
 })

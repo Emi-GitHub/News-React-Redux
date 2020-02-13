@@ -1,3 +1,9 @@
 .go-back {
     color: #bdbdbd;
 }
+.not-found {
+    /*display: flex;
+    flex-direction: column;*/
+    color: white;
+    font-size: medium;
+}

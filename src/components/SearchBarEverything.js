@@ -12,7 +12,7 @@ class SearchBarEverything extends Component {
     }
     render() {
         console.log('term2:', this.props.term2, 'rememberTerm:', this.props.rememberTerm, 'term:', this.props.term)
-       /* const searchForOptions = () => {
+        const searchForOptions = () => {
             return(
                 <div className="radio-button">
                     <div className="inline fields sort-section">
@@ -56,7 +56,7 @@ class SearchBarEverything extends Component {
                     </div>
                 </div>
             )
-        }*/
+        }
         return(
             <div>
                 <form className="ui form container search-sort" onSubmit={() => this.props.fetchNews(this.props.term2)}>
@@ -74,7 +74,7 @@ class SearchBarEverything extends Component {
                                 </span>
                             </div>
                         </div>
-                        {/*{searchForOptions()}*/}
+                        {searchForOptions()}
                     </div>
                 </form>
             </div>
