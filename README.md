@@ -1,68 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Task: News portal
+API: https://newsapi.org/ (you will need  to create a free api key at https://newsapi.org/account for developers)
 
-## Available Scripts
+1. Landing page with search
+Landing page should initially display news from top headlines end-point.
+Display 20 of those results in 'top-headlines cards' and the rest (if there are more) after 'load more' button click at the bottom.
+Each 'top headline card' should display title and description with an image if there is url to image in response. User then can click on a 'READ FULL ARTICLE' button to read the article on a new page 'Article'.
 
-In the project directory, you can run:
 
-### `npm start`
+2. Article page
+Article page should display:
+Source, author, title, description, image, published at date and the content (if all of these have been provided by the endpoint).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+3. Search and sorting
+User should be able to search for a term (everything endpoint).
+Search results should be displayed in the same way as the top headlines - in cards and user should also be able to read full article in articles page.
+Once the user searches for the first term there should appear a 'sort by section' offering options to sort results by popularity or relevance or published date (Top headlines should not have sorting option).
+User should be able to go back to home page displaying top headlines.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+NOTES:
+- UI needs to be fully responsive
+- Other then specification that the news on landing page should be displayed in cards, we have no more demands. It is up to you to show us your creativity and style these components the way you want to.
+- You are allowed to use UI library of your own choosing.
