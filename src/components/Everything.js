@@ -13,7 +13,7 @@ class Everything extends Component {
         const notFound = () =>{
             return (
                 <div className="not-found"> 
-                    <p>Your search - <b>{this.props.rememberTerm}</b> - did not match any documents.</p>
+                    <p>Your search - <b>{this.props.termEverything}</b> - did not match any documents.</p>
                     <p>Suggestions:</p> 
                     <li>Make sure that all words are spelled correctly.</li>
                     <li>Try different keywords.</li>
@@ -56,7 +56,8 @@ const mapStateToProps = state => {
         loaded: state.loaded,
         loading: state.loading,
         forSearch: state.forSearch,
-        showEverything: state.showEverything
+        showEverything: state.showEverything,
+        termEverything: state.termEverything
     }
 }
 export default connect(mapStateToProps, {showEverythingOnSearch})(Everything);
