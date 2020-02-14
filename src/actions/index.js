@@ -34,7 +34,8 @@ export const fetchNews = (term) => async dispatch => {
     console.log(url)
     const response = await axios.get(url);
     dispatch({
-        type: 'RADIO_1'
+        type: 'SELECTED_OPTION',
+        payload: 'option1'
     })
     dispatch({
         type: 'CHANGE_BACKGROUND',
@@ -58,21 +59,24 @@ export const fetchNews = (term) => async dispatch => {
 }
 export const fetchNewsSort = (term, radio) => async dispatch => {
         var sortBy;
-        if(radio === 'radio1') {
+        if(radio === 'option1') {
             dispatch({
-                type: 'RADIO_1'
+                type: 'SELECTED_OPTION',
+                payload: radio
             })
             sortBy = 'popularity'
         }
-        if(radio === 'radio2') {
+        if(radio === 'option2') {
             dispatch({
-                type: 'RADIO_2'
+                type: 'SELECTED_OPTION',
+                payload: radio
             })
             sortBy = 'relevance';
         }
-        if(radio === 'radio3') {
+        if(radio === 'option3') {
             dispatch({
-                type: 'RADIO_3'
+                type: 'SELECTED_OPTION',
+                payload: radio
             })
             sortBy = 'publishedAt';
         }

@@ -25,3 +25,10 @@ export const termEverything = (state = '', action) => {
         default: return state;
     }
 }
+
+export const selectedOption = (state = 'option1', action) => {
+    switch(action.type) {
+        case 'SELECTED_OPTION': return action.payload
+        default: return state;
+    }
+}
