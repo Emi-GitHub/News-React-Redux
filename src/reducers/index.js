@@ -1,84 +1,17 @@
 import { combineReducers } from 'redux';
+import { headlines } from './ArticlesReducer';
+import { selectedArticle } from './ArticlesReducer';
+import { termHome } from './ArticlesReducer';
+import { termEverything } from './ArticlesReducer';
+import { background } from './UiReducer';
+import { loaded } from './UiReducer';
+import { loading } from './UiReducer';
+import { forSearch } from './UiReducer';
+import { forHeader } from './UiReducer';
+import { setShow } from './ShowReducer';
+import { showEverything } from './ShowReducer';
 
-const initialHeadlines = [];
-const headlines = (state = initialHeadlines, action) => {
-    switch (action.type) {
-        case 'FETCH_HEADLINES': return action.payload;
-        default: return state;
-    }
-}
-const initialArticle = null;
-const selectedArticle = (state = initialArticle, action) => {
-    switch (action.type) {
-        case 'ARTICLE_SELECTED': return action.payload;
-        default: return state;
-    }
-}
-const initialShow = false;
-const setShow = (state = initialShow, action) => {
-    switch (action.type) {
-        case 'BUTTON_CLICKED': return true;
-        default: return state;
-    }
-}
-const initialBackground = 'ui text loader';
-const background = (state = initialBackground, action) => {
-    switch(action.type) {
-        case 'CHANGE_BACKGROUND': return 'background'
-        default: return state;
-    }
-}
-const initialLoaded = 'loaded-api';
-const loaded = (state = initialLoaded, action) => {
-    switch(action.type) {
-        case 'CHANGE_LOADED': return 'nothing';
-        default: return state;
-    }
-}
-const initialLoading = 'loaded-api';
-const loading = (state = initialLoading, action) => {
-    switch(action.type) {
-        case 'CHANGE_LOADING': return 'nothing';
-        default: return state;
-    }
-}
-const initialForSearch= 'hide-app';
-const forSearch = (state = initialForSearch, action) => {
-    switch(action.type) {
-        case 'CHANGE_FORSEARCH': return 'nothing';
-        default: return state;
-    }
-}
-const initialForHeader= 'hide-app';
-const forHeader = (state = initialForHeader, action) => {
-    switch(action.type) {
-        case 'CHANGE_FORHEADER': return 'topheadlines-card'
-        default: return state;
-    }
-}
-const initialTerm = '';
-const term = (state = initialTerm, action) => {
-    switch(action.type) {
-        case 'CHANGE_TERM': return action.payload;
-        default: return state;
-    }
-}
-const initialShowEverything = false;
-const showEverything = ( state = initialShowEverything, action) => {
-    switch(action.type) {
-        case 'SHOW_EVERYTHING': return true;
-        default: return state;
-    }
-}
-const initialRememberTerm = '';
-const rememberTerm = (state = initialRememberTerm, action) => {
-    switch(action.type) {
-        case 'REMEMBER_TERM': return action.payload;
-        default: return state;
-    }
-}
-const initialRadio1 = true;
-const radio1 = (state = initialRadio1, action) => {
+const radio1 = (state = true, action) => {
     switch(action.type) {
         case 'RADIO_1': return true;
         case 'RADIO_2': return false;
@@ -86,8 +19,7 @@ const radio1 = (state = initialRadio1, action) => {
         default: return state;
     }
 }
-const initialRadio2 = false;
-const radio2 = (state = initialRadio2, action) => {
+const radio2 = (state = false, action) => {
     switch(action.type) {
         case 'RADIO_1': return false;
         case 'RADIO_2': return true;
@@ -95,8 +27,7 @@ const radio2 = (state = initialRadio2, action) => {
         default: return state;
     }
 }
-const initialRadio3 = false;
-const radio3 = (state = initialRadio3, action) => {
+const radio3 = (state = false, action) => {
     switch(action.type) {
         case 'RADIO_1': return false;
         case 'RADIO_2': return false;
@@ -104,28 +35,20 @@ const radio3 = (state = initialRadio3, action) => {
         default: return state;
     }
 }
-const initialTerm2 = '';
-const term2 = (state = initialTerm2, action) => {
-    switch(action.type) {
-        case 'CHANGE_TERM2': return action.payload;
-        default: return state;
-    }
-}
 
 export default combineReducers ({
     headlines,
     selectedArticle,
+    termHome,
+    termEverything,
+    showEverything,
     setShow,
     background,
     loaded,
     loading,
     forSearch,
     forHeader,
-    term,
-    showEverything,
-    rememberTerm,
     radio1,
     radio2,
     radio3,
-    term2,
 })

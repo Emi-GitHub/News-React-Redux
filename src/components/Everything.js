@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import NewsList from './NewsList';
 import ButtonBar from './ButtonBar';
 import SearchBarEverything from './SearchBarEverything';
 import '../styles/Home.css';
 import '../styles/Everything.css';
-import { connect } from 'react-redux';
 
 class Everything extends Component { 
     render() {
@@ -16,8 +16,8 @@ class Everything extends Component {
                     <p>Suggestions:</p> 
                     <li>Make sure that all words are spelled correctly.</li>
                     <li>Try different keywords.</li>
-                    <li>Try more general keywords</li>
-                    <li>Try fewer keywords</li>
+                    <li>Try more general keywords.</li>
+                    <li>Try fewer keywords.</li>
                 </div>
             )
         }
@@ -51,15 +51,10 @@ class Everything extends Component {
 const mapStateToProps = state => {
     return {
         headlines: state.headlines,
-        rememberTerm: state.rememberTerm,
-        radio1: state.radio1,
-        radio2: state.radio2,
-        radio3: state.radio3,
         background: state.background,
         loaded: state.loaded,
         loading: state.loading,
         forSearch: state.forSearch,
-        forHeader: state.forHeader
     }
 }
 export default connect(mapStateToProps)(Everything);

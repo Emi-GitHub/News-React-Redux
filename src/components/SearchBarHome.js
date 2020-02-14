@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { showEverythingonSearch } from '../actions';
 import { changeTerm } from '../actions';
 import "../styles/SearchBar.css";
 
 class SearchBarHome extends Component {
+    onFormSubmit = event => {
+        event.preventDefault()
+        this.props.showEverythingonSearch()
+    }
     render() {
         return(
             <div>
-                <form className="ui form container" onSubmit={() => this.props.showEverythingonSearch()}>
+                <form className="ui form container" onSubmit={this.onFormSubmit}>
                     <div className="field" >
                         <div className="ui search">
                             <div className="ui icon input focus home-search">
@@ -17,7 +21,7 @@ class SearchBarHome extends Component {
                                     type="text" 
                                     placeholder="Search news..."
                                     onChange={(event) => this.props.changeTerm(event.target.value)}
-                                    value={this.props.term}
+                                    value={this.props.termHome}
                                 />
                                 <span onClick={() => this.props.showEverythingonSearch()} className="search-icon">
                                     <i className="search icon"/>
@@ -34,7 +38,7 @@ class SearchBarHome extends Component {
 
 const mapStateToProps = state => {
     return {
-        term: state.term,
+        termHome: state.termHome,
         showEverything: state.showEverything
     }
 }

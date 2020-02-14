@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NewsCard from './NewsCard';
 import { connect } from 'react-redux';
+import NewsCard from './NewsCard';
 import '../styles/NewsList.css'
 import '../styles/LoadMore.css';
 
