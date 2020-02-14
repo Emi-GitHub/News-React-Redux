@@ -31,8 +31,9 @@ export const fetchTopHeadlines = () => async dispatch => {
 export const fetchNews = (term) => async dispatch => {
     const BASE_URL = 'https://newsapi.org/v2/everything?';
     const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
+    const sortBy = 'popularity';
     const q = term; 
-    const url = BASE_URL + 'q=' + q + '&' + API_KEY;
+    const url = BASE_URL + 'q=' + q + '&sortBy=' + sortBy + '&' + API_KEY;
     const response = await axios.get(url);
     dispatch({
         type: 'CLEAN_TERM'
