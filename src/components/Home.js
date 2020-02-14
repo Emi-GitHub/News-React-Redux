@@ -11,7 +11,6 @@ class Home extends Component {
         this.props.fetchTopHeadlines()
     }
     render() {
-        console.log(this.props.headlines)
         return (
             <div className={this.props.loaded} >
                 <div className={this.props.loading}>

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { showEverythingonSearch } from '../actions';
+import { showEverythingOnSearch } from '../actions';
 import { changeTerm } from '../actions';
 import "../styles/SearchBar.css";
 
 class SearchBarHome extends Component {
     onFormSubmit = event => {
         event.preventDefault()
-        this.props.showEverythingonSearch()
+        this.props.showEverythingOnSearch(true)
     }
     render() {
         return(
@@ -27,6 +27,7 @@ class SearchBarHome extends Component {
                                     <i className="search icon"/>
                                 </span>
                             </div>
+                            {console.log('there:', this.props.showEverything)}
                             {this.props.showEverything ? <Redirect to={{pathname:'/everything'}} /> : null} 
                         </div>
                     </div>
@@ -42,4 +43,4 @@ const mapStateToProps = state => {
         showEverything: state.showEverything
     }
 }
-export default connect(mapStateToProps, {showEverythingonSearch, changeTerm})(SearchBarHome);
+export default connect(mapStateToProps, {showEverythingOnSearch, changeTerm})(SearchBarHome);

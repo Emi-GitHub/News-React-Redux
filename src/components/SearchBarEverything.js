@@ -15,7 +15,6 @@ class SearchBarEverything extends Component {
         this.props.fetchNews(this.props.termEverything);
     }
     render() {
-        console.log('termEverything:', this.props.termEverything,  'term:', this.props.termHome)
         const searchForOptions = () => {
             return(
                 <div className="radio-button">

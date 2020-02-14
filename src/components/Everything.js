@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import NewsList from './NewsList';
 import ButtonBar from './ButtonBar';
 import SearchBarEverything from './SearchBarEverything';
+import { showEverythingOnSearch } from '../actions';
 import '../styles/Home.css';
 import '../styles/Everything.css';
 
@@ -31,9 +32,10 @@ class Everything extends Component {
                         <div className={this.props.forSearch}>
                             <div className="topheadlines-card">
                                 <div className="transparent-div">
-                                    <Link to="/" className="go-back">
+                                    <Link to={{pathname:'/'}} className="go-back" onClick = {() => this.props.showEverythingOnSearch(false)}>
                                         <i className="left chevron icon"/>
                                         Go back to home page
+                                        {console.log(this.props.showEverything)}
                                     </Link>
                                     <div className="header-top">Search for...</div>
                                     <NewsList />
@@ -55,6 +57,7 @@ const mapStateToProps = state => {
         loaded: state.loaded,
         loading: state.loading,
         forSearch: state.forSearch,
+        showEverything: state.showEverything
     }
 }
-export default connect(mapStateToProps)(Everything);
+export default connect(mapStateToProps, {showEverythingOnSearch})(Everything);

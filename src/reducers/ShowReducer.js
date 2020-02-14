@@ -7,7 +7,7 @@ export const setShow = (state = false, action) => {
 
 export const showEverything = ( state = false, action) => {
     switch(action.type) {
-        case 'SHOW_EVERYTHING': return true;
+        case 'SHOW_EVERYTHING': return action.payload;
         default: return state;
     }
 }

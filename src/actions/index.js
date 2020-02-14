@@ -6,6 +6,9 @@ export const fetchTopHeadlines = () => async dispatch => {
     const url = BASE_URL + 'country=us&' + API_KEY;
     const response = await axios.get(url);
     dispatch({
+        type: 'CLEAN_TERM'
+    })
+    dispatch({
         type: 'CHANGE_BACKGROUND',
     })
     dispatch({
@@ -26,12 +29,10 @@ export const fetchTopHeadlines = () => async dispatch => {
     })
 }
 export const fetchNews = (term) => async dispatch => {
-    console.log(term)
     const BASE_URL = 'https://newsapi.org/v2/everything?';
     const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
     const q = term; 
     const url = BASE_URL + 'q=' + q + '&' + API_KEY;
-    console.log(url)
     const response = await axios.get(url);
     dispatch({
         type: 'SELECTED_OPTION',
@@ -84,7 +85,6 @@ export const fetchNewsSort = (term, radio) => async dispatch => {
         const API_KEY = 'apiKey=' + process.env.REACT_APP_API_KEY;
         const q = term; 
         const url = BASE_URL + 'q=' + q + '&sortBy=' + sortBy + '&' + API_KEY;
-        console.log(url)
         const response = await axios.get(url);
         dispatch({
             type: 'FETCH_HEADLINES',
@@ -114,8 +114,9 @@ export const changeTerm = term => {
         payload: term
     }
 }
-export const showEverythingonSearch = () => {
+export const showEverythingOnSearch = show => {
     return {
         type: 'SHOW_EVERYTHING',
+        payload: show
     }
 }
