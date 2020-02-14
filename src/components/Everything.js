@@ -35,7 +35,6 @@ class Everything extends Component {
                                     <Link to={{pathname:'/'}} className="go-back" onClick = {() => this.props.showEverythingOnSearch(false)}>
                                         <i className="left chevron icon"/>
                                         Go back to home page
-                                        {console.log(this.props.showEverything)}
                                     </Link>
                                     <div className="header-top">Search for...</div>
                                     <NewsList />

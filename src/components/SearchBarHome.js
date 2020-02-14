@@ -27,7 +27,6 @@ class SearchBarHome extends Component {
                                     <i className="search icon"/>
                                 </span>
                             </div>
-                            {console.log('there:', this.props.showEverything)}
                             {this.props.showEverything ? <Redirect to={{pathname:'/everything'}} /> : null} 
                         </div>
                     </div>
