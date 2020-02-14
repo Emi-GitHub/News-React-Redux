@@ -35,6 +35,9 @@ export const fetchNews = (term) => async dispatch => {
     const url = BASE_URL + 'q=' + q + '&' + API_KEY;
     const response = await axios.get(url);
     dispatch({
+        type: 'CLEAN_TERM'
+    })
+    dispatch({
         type: 'SELECTED_OPTION',
         payload: 'option1'
     })
