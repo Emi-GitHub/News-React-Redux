@@ -6,7 +6,7 @@ import '../styles/NewsList.css';
 class NewsList extends Component {
     render() {
         const news = this.props.headlines.map((item, i)=> {
-            if(i < 16) return (<NewsCard item={item}/>)
+            if(i < 20) return (<NewsCard item={item}/>)
             return true;
         }); 
         return (
