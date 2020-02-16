@@ -23,7 +23,7 @@ class SearchBarHome extends Component {
                                     onChange={(event) => this.props.changeTerm(event.target.value)}
                                     value={this.props.termHome}
                                 />
-                                <span onClick={() => this.props.showEverythingonSearch()} className="search-icon">
+                                <span onClick={() => this.props.showEverythingOnSearch(true)} className="search-icon">
                                     <i className="search icon"/>
                                 </span>
                             </div>
