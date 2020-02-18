@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { showEverythingOnSearch } from '../actions';
 import { changeTerm } from '../actions';
 import '../styles/SearchBar.css';
 
-class SearchBarHome extends Component {
-  onFormSubmit = event => {
-    event.preventDefault();
-    this.props.showEverythingOnSearch(true);
-  };
-
+class SearchBarArticle extends Component {
+    onFormSubmit = event => {
+        event.preventDefault();
+        this.props.showEverythingOnSearch(true);
+      };
+    
   render() {
     return (
       <div>
@@ -47,11 +47,11 @@ const mapStateToProps = state => ({
   termHome: state.termHome,
   showEverything: state.showEverything,
 });
-SearchBarHome.propTypes = {
+SearchBarArticle.propTypes = {
   termHome: PropTypes.string,
   showEverything: PropTypes.bool
 }
 export default connect(
   mapStateToProps,
   { showEverythingOnSearch, changeTerm }
-)(SearchBarHome);
+)(SearchBarArticle);

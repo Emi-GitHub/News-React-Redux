@@ -12,17 +12,17 @@ import { forHeader } from './UiReducer';
 import { setShow } from './ShowReducer';
 import { showEverything } from './ShowReducer';
 
-export default combineReducers ({
-    headlines,
-    selectedArticle,
-    termHome,
-    termEverything,
-    showEverything,
-    setShow,
-    background,
-    loaded,
-    loading,
-    forSearch,
-    forHeader,
-    selectedOption
-})
+export default combineReducers({
+  headlines,
+  selectedArticle,
+  termHome,
+  termEverything,
+  showEverything,
+  setShow,
+  background,
+  loaded,
+  loading,
+  forSearch,
+  forHeader,
+  selectedOption,
+});
