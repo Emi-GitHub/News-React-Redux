@@ -5,7 +5,7 @@
   "env": {
     "test": {
       "presets": ["@babel/preset-env", "@babel/preset-react"],
-      "plugins": ["transform-export-extensions"],
+      "plugins": ["@babel/plugin-proposal-class-properties"],
       "only": [
         "./**/*.js",
         "node_modules/jest-runtime"
