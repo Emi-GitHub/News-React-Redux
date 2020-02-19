@@ -13,7 +13,7 @@ class ButtonBar extends Component {
           className="fluid ui button loadmore-button"
           onClick={() => this.props.buttonClicked()}
         >
-          Load more
+         Load more
         </button>
         {this.props.setShow && <LoadMore />}
         {!this.props.setShow ? () => this.props.buttonClicked() : null}

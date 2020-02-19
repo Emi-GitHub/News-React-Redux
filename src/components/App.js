@@ -4,7 +4,6 @@ import history from '../history';
 import Home from './Home';
 import Everything from './Everything';
 import Article from './Article';
-// prettier: npm run lint:fix
 
 class App extends Component {
   render() {
