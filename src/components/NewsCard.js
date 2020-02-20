@@ -15,7 +15,7 @@ class NewsCard extends Component {
       return <div style={backgroundImgStyle} className="card-photo" />;
     };
     return (
-      <div className="card-style" key={this.props.item.url}>
+      <div className="card-style" >
         {PictureCard()}
         <h3 className="card-header">{this.props.item.title}</h3>
         <div className="card-description">{this.props.item.description}</div>
@@ -37,8 +37,8 @@ const mapStateToProps = (state, ownProps) => ({
   item: state.headlines.find(item => item === ownProps.item),
 });
 NewsCard.propTypes = {
-  headlines: PropTypes.array
-}
+  headlines: PropTypes.array,
+};
 export default connect(
   mapStateToProps,
   { selectArticle }

@@ -10,8 +10,8 @@ import '../styles/Home.css';
 import '../styles/Everything.css';
 
 class Everything extends Component {
-  componentDidMount(){
-    this.props.showEverythingOnSearch(false)
+  componentDidMount() {
+    this.props.showEverythingOnSearch(false);
   }
   render() {
     const notFound = () => (
@@ -75,8 +75,8 @@ Everything.propTypes = {
   background: PropTypes.string,
   loaded: PropTypes.string,
   loading: PropTypes.string,
-  forSearch: PropTypes.string
-}
+  forSearch: PropTypes.string,
+};
 
 export default connect(
   mapStateToProps,

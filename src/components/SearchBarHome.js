@@ -49,8 +49,8 @@ const mapStateToProps = state => ({
 });
 SearchBarHome.propTypes = {
   termHome: PropTypes.string,
-  showEverything: PropTypes.bool
-}
+  showEverything: PropTypes.bool,
+};
 export default connect(
   mapStateToProps,
   { showEverythingOnSearch, changeTerm }

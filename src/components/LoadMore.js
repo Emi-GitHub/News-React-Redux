@@ -8,7 +8,7 @@ import '../styles/LoadMore.css';
 class LoadMore extends Component {
   render() {
     const news = this.props.headlines.map((item, i) => {
-      if (i >= 20) return <NewsCard item={item} />;
+      if (i >= 16) return <NewsCard item={item} key={item.url+item.source.id}/>;
       return true;
     });
     return <div className="cards-wrapper">{news}</div>;
@@ -19,7 +19,7 @@ const mapStateToProps = state => ({
 });
 
 LoadMore.propTypes = {
-  headlines: PropTypes.array
-}
+  headlines: PropTypes.array,
+};
 
 export default connect(mapStateToProps)(LoadMore);

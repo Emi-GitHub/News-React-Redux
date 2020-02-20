@@ -116,8 +116,8 @@ const mapStateToProps = state => ({
 });
 SearchBarEverything.propTypes = {
   termEverything: PropTypes.string,
-  termHome: PropTypes.string
-}
+  termHome: PropTypes.string,
+};
 export default connect(
   mapStateToProps,
   { fetchNews, fetchNewsSort, changeTerm }

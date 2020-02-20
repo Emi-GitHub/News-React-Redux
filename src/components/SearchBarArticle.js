@@ -7,11 +7,11 @@ import { changeTerm } from '../actions';
 import '../styles/SearchBar.css';
 
 class SearchBarArticle extends Component {
-    onFormSubmit = event => {
-        event.preventDefault();
-        this.props.showEverythingOnSearch(true);
-      };
-    
+  onFormSubmit = event => {
+    event.preventDefault();
+    this.props.showEverythingOnSearch(true);
+  };
+
   render() {
     return (
       <div>
@@ -49,8 +49,8 @@ const mapStateToProps = state => ({
 });
 SearchBarArticle.propTypes = {
   termHome: PropTypes.string,
-  showEverything: PropTypes.bool
-}
+  showEverything: PropTypes.bool,
+};
 export default connect(
   mapStateToProps,
   { showEverythingOnSearch, changeTerm }

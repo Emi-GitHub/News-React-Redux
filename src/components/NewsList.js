@@ -7,7 +7,7 @@ import '../styles/NewsList.css';
 class NewsList extends Component {
   render() {
     const news = this.props.headlines.map((item, i) => {
-      if (i < 20) return <NewsCard item={item} />;
+      if (i < 16) return <NewsCard item={item} key={item.url+item.source.id}/>;
       return true;
     });
     return <div className="cards-wrapper">{news}</div>;
@@ -19,7 +19,7 @@ const mapStateToProps = state => ({
 });
 
 NewsList.propTypes = {
-  headlines: PropTypes.array
-}
+  headlines: PropTypes.array,
+};
 
 export default connect(mapStateToProps)(NewsList);

@@ -11,7 +11,6 @@ class Home extends Component {
   componentDidMount() {
     this.props.fetchTopHeadlines();
   }
-
   render() {
     return (
       <div className={this.props.loaded}>
@@ -47,10 +46,10 @@ Home.propTypes = {
   headlines: PropTypes.array,
   background: PropTypes.string,
   loaded: PropTypes.string,
-  loaded: PropTypes.string,
+  loading: PropTypes.string,
   forSearch: PropTypes.string,
-  forHeader: PropTypes.string
-}
+  forHeader: PropTypes.string,
+};
 
 export default connect(
   mapStateToProps,

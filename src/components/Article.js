@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import '../styles/Article.css';
 import SearchBarArticle from './SearchBarArticle';
@@ -21,7 +20,7 @@ class Article extends Component {
     };
     const Title = () => {
       const articleTitle = this.props.selectedArticle.title;
-      if (articleTitle === 'null') return null; 
+      if (articleTitle === 'null') return null;
       return (
         <div>
           <h1 className="header-article">{articleTitle}</h1>
@@ -96,7 +95,7 @@ class Article extends Component {
     };
     return (
       <div className="background-article">
-          <SearchBarArticle />
+        <SearchBarArticle />
         <div className="transparent-div">
           {Title()}
           {PictureCard()}
@@ -114,9 +113,5 @@ class Article extends Component {
 const mapStateToProps = state => ({
   selectedArticle: state.selectedArticle,
 });
-
-Article.propTypes = {
-  selectedArticle: PropTypes.bool
-}
 
 export default connect(mapStateToProps)(Article);
