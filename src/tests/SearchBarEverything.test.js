@@ -11,7 +11,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 Enzyme.configure({ adapter: new Adapter() })
 const wrapper = shallow(<SearchBarEverything store={store}/>).dive();
 
-describe('SearchBarHome component', () => {
+describe('SearchBarEverything component', () => {
     it('starts with a term home of "" ', () => {
         const termState = wrapper.props().termHome
         expect(termState).toEqual('');
@@ -20,7 +20,7 @@ describe('SearchBarHome component', () => {
         const termState = wrapper.props().termEverything
         expect(termState).toEqual('');
     })
-    it('starts with a show of false', ()=>{
+    it('starts with a selected of option1', ()=>{
         const showState = wrapper.props().selectedOption
         expect(showState).toEqual('option1');
     })

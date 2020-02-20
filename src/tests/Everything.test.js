@@ -24,7 +24,7 @@ describe('Everything component', () => {
         const loadedState = wrapper.props().loaded
         expect(loadedState).toEqual('loaded-api');
     })
-    it('starts with a loading of ui active inverted dimmer', () => {
+    it('starts with a loading of loaded-api', () => {
         const loadingState = wrapper.props().loading
         expect(loadingState).toEqual('loaded-api');
     })
